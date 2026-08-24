@@ -58,7 +58,7 @@ typedef CONSTANT_UNSIGNED_8BYTE const uint64_t // Example: CONSTANT_UNSIGNED_8BY
 #endif//#define INPUT_NUMBER input_number // Example: INPUT_NUMBER(varible);
 #define INPUT_NUMBER scanf // Example: INPUT_NUMBER("%d", varible);
 
-#define EXIT_PROGRAM exit
+#define EXIT_PROGRAM exit(EXIT_SUCCESS)
 
 
 
@@ -77,8 +77,7 @@ typedef CONSTANT_UNSIGNED_8BYTE const uint64_t // Example: CONSTANT_UNSIGNED_8BY
 #define MAKE_FUNCTION_TO_RETURN_LETTER LETTER
 #define MAKE_FUNCTION_TO_RETURN_STRING STRING
 
-#define MAIN_AND_RETURN int main // Example: MAIN_AND_RETURN(void) { PRINT_STRING("Hello, world!"); return 0; }
-#define MAIN_AND_NOT_RETURN void main // Example: MAIN_AND_NOT_RETURN(void) { PRINT_STRING("Hello, world!"); EXIT_PROGRAM; }
+#define MAIN int main // Example: MAIN(void) { PRINT_STRING("Hello, world!"); return 0; }
 
 
 
