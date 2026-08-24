@@ -3,7 +3,6 @@
 
 #if defined(use_lib_system_h)
   #include "system.h"
-  #include "system.c"
 #else
   #include <stdio.h>
   #include <stdint.h>
@@ -12,36 +11,36 @@
 
 
 
-#define LETTER char // Example: LETTER letter = 'a' '''or''' LETTER string[100]
-#define STRING char* // Example: STRING string = "This string is a example" '''or''' STRING string = MAKE_AND_NULL_DYNAMIC_MASSIVE(100, sizeof(LETTER))
+typedef LETTER char // Example: LETTER letter = 'a' '''or''' LETTER string[100]
+typedef STRING char* // Example: STRING string = "This string is a example" '''or''' STRING string = MAKE_AND_NULL_DYNAMIC_MASSIVE(100, sizeof(LETTER))
 
-#define SIGNED_1BYTE int8_t // Example: SIGNED_1BYTE number = 0
-#define UNSIGNED_1BYTE uint8_t // Example: UNSIGNED_1BYTE number = 0
+typedef SIGNED_1BYTE int8_t // Example: SIGNED_1BYTE number = 0
+typedef UNSIGNED_1BYTE uint8_t // Example: UNSIGNED_1BYTE number = 0
 
-#define SIGNED_2BYTE int16_t // Example: SIGNED_2BYTE number = 0
-#define UNSIGNED_2BYTE uint16_t // Example: UNSIGNED_2BYTE number = 0
+typedef SIGNED_2BYTE int16_t // Example: SIGNED_2BYTE number = 0
+typedef UNSIGNED_2BYTE uint16_t // Example: UNSIGNED_2BYTE number = 0
 
-#define SIGNED__4BYTE int32_t // Example: SIGNED_4BYTE number = 0
-#define UNSIGNED__4BYTE uint32_t // Example: UNSIGNED_1BYTE number = 0
+typedef SIGNED__4BYTE int32_t // Example: SIGNED_4BYTE number = 0
+typedef UNSIGNED__4BYTE uint32_t // Example: UNSIGNED_1BYTE number = 0
 
-#define SIGNED_8BYTE int64_t // Example: SIGNED_8BYTE number = 0
-#define UNSIGNED_8BYTE uint64_t // Example: UNSIGNED_8BYTE number = 0
+typedef SIGNED_8BYTE int64_t // Example: SIGNED_8BYTE number = 0
+typedef UNSIGNED_8BYTE uint64_t // Example: UNSIGNED_8BYTE number = 0
 
 
-#define CONSTANT_LETTER const char
-#define CONSTANT_STRING const char*
+typedef CONSTANT_LETTER const char // Example: CONSTANT_LETTER letter = 'a' '''or''' CONSTANT_LETTER string[100]
+typedef CONSTANT_STRING const char* // Example: CONSTANT_STRING string = "This string is a example"
 
-#define CONSTANT_SIGNED_1BYTE const int8_t // Example: CONSTANT_SIGNED_1BYTE number = 5
-#define CONSTANT_UNSIGNED_1BYTE const uint8_t // Example: CONSTANT_UNSIGNED_1BYTE number = 5
+typedef CONSTANT_SIGNED_1BYTE const int8_t // Example: CONSTANT_SIGNED_1BYTE number = 5
+typedef CONSTANT_UNSIGNED_1BYTE const uint8_t // Example: CONSTANT_UNSIGNED_1BYTE number = 5
 
-#define CONSTANT_SIGNED_2BYTE const int16_t // Example: CONSTANT_SIGNED_2BYTE number = 5
-#define CONSTANT_UNSIGNED_2BYTE const uint16_t // Example: CONSTANT_UNSIGNED_2BYTE number = 5
+typedef CONSTANT_SIGNED_2BYTE const int16_t // Example: CONSTANT_SIGNED_2BYTE number = 5
+typedef CONSTANT_UNSIGNED_2BYTE const uint16_t // Example: CONSTANT_UNSIGNED_2BYTE number = 5
 
-#define CONSTANT_SIGNED_4BYTE const int32_t // Example: CONSTANT_SIGNED_4BYTE number = 5
-#define CONSTANT_UNSIGNED_4BYTE const uint32_t // Example: CONSTANT_UNSIGNED_4BYTE number = 5
+typedef CONSTANT_SIGNED_4BYTE const int32_t // Example: CONSTANT_SIGNED_4BYTE number = 5
+typedef CONSTANT_UNSIGNED_4BYTE const uint32_t // Example: CONSTANT_UNSIGNED_4BYTE number = 5
 
-#define CONSTANT_SIGNED_8BYTE const int64_t // Example: CONSTANT_SIGNED_8BYTE number = 5
-#define CONSTANT_UNSIGNED_8BYTE const uint64_t // Example: CONSTANT_UNSIGNED_8BYTE number = 5
+typedef CONSTANT_SIGNED_8BYTE const int64_t // Example: CONSTANT_SIGNED_8BYTE number = 5
+typedef CONSTANT_UNSIGNED_8BYTE const uint64_t // Example: CONSTANT_UNSIGNED_8BYTE number = 5
 
 
 
@@ -55,12 +54,11 @@
 #if defined(use_lib_system_h)
   #define INPUT_STRING input // Example: INPUT_STRING(massive, 5); or INPUT_STRING(massive, sizeof(massive));
 #else
-  #define INPUT_STRING fgets // Example: INPUT_STRING(massive, 5, stdin); or INPUT_STRING(massive, sizeof(massive), stdin);
-#endif
-//#define INPUT_NUMBER input_number // Example: INPUT_NUMBER(varible);
+  #define INPUT_STRING fgets // Example: INPUT_STRING(massive, 5, stdin); or INPUT_STRING(massive, sizeof(massive), stdin);0
+#endif//#define INPUT_NUMBER input_number // Example: INPUT_NUMBER(varible);
 #define INPUT_NUMBER scanf // Example: INPUT_NUMBER("%d", varible);
 
-#define EXIT_PROGRAM exit()
+#define EXIT_PROGRAM exit
 
 
 
@@ -83,12 +81,5 @@
 #define MAIN_AND_NOT_RETURN void main // Example: MAIN_AND_NOT_RETURN(void) { PRINT_STRING("Hello, world!"); EXIT_PROGRAM; }
 
 
-
-#define IF if
-//#define ELIF else if
-#define ELSE else
-
-#define FOR for
-#define WHILE while
 
 #endif
